@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <input id="textField" placeholder="write you search here">
+    <button id="btn">Push</button>
+</body>
+    <script>
+        const btn = document.querySelector('#btn')
+        const textField = document.querySelector('#textField')
+
+        btn.addEventListener('click',()=>{
+            const currentValue = textField.value
+            const data = {"value":currentValue}
+            
+            fetch('https://server-sbdt.onrender.com/set',
+            {
+                    // mode:'no-cors',
+                    method: 'POST', // *GET, POST, PUT, DELETE, etc.
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data) 
+
+
+                }
+                )
+             
+
+
+        })
+    </script>
+</html>
